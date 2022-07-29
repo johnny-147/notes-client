@@ -1,0 +1,22 @@
+<form [formGroup]="noteFormGroup" class="form-content">
+  <div class="form-item">
+    <div class="form-item-title">
+      <p>Note Title:</p>
+    </div>
+    <input id="title" type="text" class="form-control" name="titleValue" formControlName="titleValue">
+  </div>
+  <div class="form-item">
+    <div class="form-item-title">
+      <p>Content:</p>
+    </div>
+    <input id="content" type="text" class="form-control" name="contentValue"formControlName="contentValue">
+  </div>
+</form>
+
+<div class="actions">
+  <button type="button" class="save-btn" (click)="addNote()">Submit</button>
+</div>
+
+<div class="no-entries" *ngIf="this.successful && !this.noteFormGroup.dirty">
+  <p>Note added successfully.</p>
+</div>

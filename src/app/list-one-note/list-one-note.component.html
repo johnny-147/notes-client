@@ -1,0 +1,27 @@
+<form [formGroup]="noteFormGroup" class="form-content">
+  <div class="form-item">
+    <div class="form-item-title">
+      <p>Note Title:</p>
+    </div>
+    <input id="title" type="text" class="form-control" name="titleValue" formControlName="titleValue">
+  </div>
+</form>
+
+<div class="actions">
+  <button type="button" class="find-btn" (click)="findOneNote()">Submit</button>
+</div>
+
+<div class="no-entries" *ngIf="this.note === null">
+  <p>No results found, try entering a different title.</p>
+</div>
+
+<table *ngIf="this.note !== null && this.note !== undefined">
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+  </tr>
+  <tr>
+    <td>{{note.title}}</td>
+    <td>{{note.content}}</td>
+  </tr>
+</table>

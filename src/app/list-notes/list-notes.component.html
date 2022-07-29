@@ -1,0 +1,14 @@
+<div class="no-entries" *ngIf="notesList.length === 0">
+  <p>Please Add new Note if no table is shown.</p>
+</div>
+
+<table *ngIf="notesList.length > 0">
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+  </tr>
+  <tr *ngFor="let note of notesList">
+    <td>{{note.title}}</td>
+    <td>{{note.content}}</td>
+  </tr>
+</table>
